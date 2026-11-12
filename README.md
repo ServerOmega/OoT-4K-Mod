@@ -13,6 +13,12 @@ problems over a few minutes of play.
 The game's own files are copyrighted and **not included**. You make the
 memory file from your own copy of the game (steps below).
 
+## Preview
+
+![Lon Lon Ranch, 4K mod with DLAA on Fritchii v5.8.4](docs/lon-lon-ranch.jpg)
+
+Lon Lon Ranch, 4K mod with DLAA on Fritchii v5.8.4.
+
 ## What it changes
 
 The code patch (`exefs/*.ips`, readable copy in `patches/oot_4k.pchtxt`)
