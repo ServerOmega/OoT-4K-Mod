@@ -1,0 +1,24 @@
+@nsobid-E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348
+# Ocarina of Time native 4K (picture size + scene scale)
+# Title 0400486024DEC000, build id E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348
+# Offsets are into main's text (after the NSO header).
+# @flag offset_shift 0x100 matches Fritchii/yuzu IPSwitch: the patch
+# is applied to the whole NSO file, so each offset is moved by the
+# 0x100-byte NSO0 header. Hex words are ARM encodings in the usual
+# most-significant-byte-first form; Fritchii stores them little-endian.
+#
+# Max Resolution (main+0x805BD0 tbz -> b) is left out: Fritchii already
+# ships it as a built-in. Keep that add-on on. This patch does not
+# include the HeapDef growth (romfs) or the +400 MiB application pool.
+@flag offset_shift 0x100
+
+@enabled
+01202EE0 D281E008  # picture 2560 -> 3840 (site 1); was D2814008
+01202EE4 F2C10E08  # picture 1440 -> 2160 (site 1); was F2C0B408
+031F39F4 D281E008  # picture 2560 -> 3840 (site 2); was D2814008
+031F39F8 F2C10E08  # picture 1440 -> 2160 (site 2); was F2C0B408
+031F3A00 D2816808  # scene 1920 -> 2880; was D280F008
+031F3A04 F2C0CA88  # scene 1080 -> 1620; was F2C08708
+0080641C AA1F03E8  # csel x8, x9, x8, hi -> mov x8, xzr; was 9A888128
+00806420 52A7F809  # scene scale 1.0f -> 1.5f; was 52A7F009
+@stop
