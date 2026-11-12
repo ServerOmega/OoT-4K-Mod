@@ -7,7 +7,7 @@ ceil(DTA * (2.25 - 1) / 1024) * 1024 KiB. For the shipped 312320 KiB DTA
 that is +391168 KiB, giving 703488 and 1252352 KiB, as logged in the
 working in-emulator 4K run.
 
-The box has no game dump. Run this on the PC against a RomFS dump
+The game files are not included. Run this against a RomFS dump
 (Fritchii: right-click the game -> Dump RomFS -> Dump RomFS -> Full),
 without EDEN_NX2_OOT_4K=1, then copy the grown files into the OoT-4K
 mod's romfs folder.
